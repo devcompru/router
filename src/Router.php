@@ -7,30 +7,32 @@ use Devcompru\Interfaces\RouterInterface;
 
 class Router implements RouterInterface
 {
-    private array $routes = [];
-    private array $route;
+    private static array $routes = [];
+    private static array $route;
 
-    public function addRoutes(array $routes): bool
+    private function __construct(){}
+    public static function addRoutes(array $routes): bool
     {
-        // TODO: Implement addRoutes() method.
+        self::$routes[] = $routes;
+        return true;
     }
 
-    public function addRoute(string $method, string $pattern, array $route): bool
+    public static function addRoute(string $method, string $pattern, array $route): bool
     {
         // TODO: Implement addRoute() method.
     }
 
-    public function getRoutes(): array
+    public static function getRoutes(): array
     {
-        // TODO: Implement getRoutes() method.
+        return self::$routes;
     }
 
-    public function getRoute(): array
+    public static function getRoute(): array
     {
         // TODO: Implement getRoute() method.
     }
 
-    public function matchRoute(string $uri): array
+    public static function matchRoute(string $uri): array
     {
         // TODO: Implement matchRoute() method.
     }
