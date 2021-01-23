@@ -5,8 +5,11 @@ namespace Devcompru;
 
 use Devcompru\Interfaces\RouterInterface;
 
+
+
 class Router implements RouterInterface
 {
+
     const L_SEPARATOR = '<';
     const R_SEPARATOR = '>';
 
@@ -100,7 +103,7 @@ class Router implements RouterInterface
     }
 
 /**
- * TEST METHODS
+ * TEST METHODS FOR PERFORMANCE
  */
 
     public static function getRoute2(): array|bool
