@@ -17,8 +17,8 @@ class Router implements RouterInterface
     private static array $route = [];
     private static array $params =[];
 
-    private function __construct(){}
-    public static function addRoutes(array $routes): bool
+    public function __construct(){}
+    public  function addRoutes(array $routes): bool
     {
 
         foreach ($routes as $route)
@@ -27,7 +27,7 @@ class Router implements RouterInterface
         return true;
     }
 
-    public static function addRoute(string $method, string $pattern, array $route): bool
+    public  function addRoute(string $method, string $pattern, array $route): bool
     {
         self::$routes[$method][] = [
             'pattern'=>$pattern,
@@ -36,11 +36,11 @@ class Router implements RouterInterface
 
         return true;
     }
-    public static function getRoutes(): array
+    public  function getRoutes(): array
     {
         return self::$routes;
     }
-    public static function getRoute(): array|bool
+    public  function getRoute(): array|bool
     {
         $uri = self::getUri();
         $method = $_SERVER['REQUEST_METHOD'] ??='GET';
@@ -53,16 +53,16 @@ class Router implements RouterInterface
 
         return self::$route;
     }
-    public static function getParams(): array
+    public  function getParams(): array
     {
         return self::$params;
     }
 
-    public static function getUri(): string
+    public  function getUri(): string
     {
         return isset($_SERVER['REQUEST_URI'])?explode('?', $_SERVER['REQUEST_URI'])[0]:'/';
     }
-    public static function getCurrentRoute(string $uri, array $route): bool
+    public  function getCurrentRoute(string $uri, array $route): bool
     {
         $pattern = $route['pattern'];
         $uri = trim ($uri, '/');
@@ -106,7 +106,7 @@ class Router implements RouterInterface
  * TEST METHODS FOR PERFORMANCE
  */
 
-    public static function getRoute2(): array|bool
+    public  function getRoute2(): array|bool
     {
         $uri = self::getUri();
         $method = $_SERVER['REQUEST_METHOD'] ??='GET';
@@ -120,7 +120,7 @@ class Router implements RouterInterface
 
         return self::$route;
     }
-    public static function addRoutes2(array $routes): bool
+    public  function addRoutes2(array $routes): bool
     {
 
         self::$routes = $routes;

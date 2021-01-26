@@ -7,13 +7,14 @@ namespace Devcompru\Interfaces;
 
 interface RouterInterface
 {
-    public static function addRoutes(array $routes): bool;
-    public static function addRoute(string $method, string $pattern, array $route): bool;
+    public  function addRoutes(array $routes): bool;
+    public  function addRoute(string $method, string $pattern, array $route): bool;
 
-    public static function getRoutes(): array;
-    public static function getRoute(): array|bool;
-    public static function getUri(): string;
-    public static function getCurrentRoute(string $uri, array $route): bool;
-    public static function getParams(): array;
+    public  function getRoutes():   array;
+    public  function getRoute():    array|bool;
+    public  function getUri():      string;
+    public  function getParams():   array;
+    public  function getCurrentRoute(string $uri, array $route): bool;
+
 
 }
