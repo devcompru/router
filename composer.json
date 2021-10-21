@@ -1,0 +1,20 @@
+{
+  "name": "devcompru/router",
+  "description": "Роутер для API",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Demos",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "devcompru\\": "src"
+    }
+  },
+  "require": {
+
+  }
+}
